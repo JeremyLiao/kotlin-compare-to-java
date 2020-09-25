@@ -30,6 +30,7 @@
       * [模板类](#模板类)
       * [枚举](#枚举)
       * [委托模式](#委托模式)
+      * [let,run,applu,also](#let,run,applu,also)
 
 ## 变量定义
 - kotlin
@@ -1038,4 +1039,119 @@ Base d = new Delegate(b);
 d.print();
 ```
 > Kotlin直接支持委托模式。Kotlin通过关键字by实现委托。
+---
+## let,run,applu,also
+### let
+- kotlin
+
+```
+fun test1(str: String?) {
+    val ret = str?.let {
+        print(it)
+        it
+    }
+    print(ret)
+}
+```
+- java
+
+```
+public static final void test1(@Nullable String str) {
+  String var10000;
+  if (str != null) {
+     System.out.print(str);
+     var10000 = str;
+  } else {
+     var10000 = null;
+  }
+
+  String ret = var10000;
+  System.out.print(ret);
+}
+```
+---
+### run
+- kotlin
+
+```
+fun test2(str: String?) {
+    val ret = str?.run {
+        print(this)
+        this
+    }
+    print(ret)
+}
+```
+- java
+
+```
+public static final void test2(@Nullable String str) {
+  String var10000;
+  if (str != null) {
+     System.out.print(str);
+     var10000 = str;
+  } else {
+     var10000 = null;
+  }
+
+  String ret = var10000;
+  System.out.print(ret);
+}
+```
+---
+### apply
+- kotlin
+
+```
+fun test3(str: String?) {
+    val ret = str?.apply {
+        print(this)
+    }
+    print(ret)
+}
+```
+- java
+
+```
+public static final void test3(@Nullable String str) {
+  String var10000;
+  if (str != null) {
+     System.out.print(str);
+     var10000 = str;
+  } else {
+     var10000 = null;
+  }
+
+  String ret = var10000;
+  System.out.print(ret);
+}
+```
+---
+### also
+- kotlin
+
+```
+fun test4(str: String?) {
+    val ret = str?.also {
+        print(it)
+    }
+    print(ret)
+}
+```
+- java
+
+```
+public static final void test4(@Nullable String str) {
+  String var10000;
+  if (str != null) {
+     System.out.print(str);
+     var10000 = str;
+  } else {
+     var10000 = null;
+  }
+
+  String ret = var10000;
+  System.out.print(ret);
+}
+```
 ---
